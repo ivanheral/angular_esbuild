@@ -1,0 +1,14 @@
+<div *ngIf="show" class="fixed z-10 inset-0 overflow-y-auto">
+  <div class="items-end justify-center pt-4 px-4 text-center block">
+    <div
+      class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+      aria-hidden="true"
+    ></div>
+    <span class="sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+    <div
+      class="inline-block align-bottom rounded-lg overflow-hidden shadow-xl transform transition-all sm:align-middle max-w-lg w-full"
+    >
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

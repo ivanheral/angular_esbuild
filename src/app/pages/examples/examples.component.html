@@ -1,0 +1,30 @@
+<app-form #form1 [state]="templateDataPersonal"> </app-form>
+<app-footer
+  class="flex pb-4"
+  [align]="'justify-end'"
+  [state]="templateDataPersonal"
+>
+  <div class="w-full grid grid-cols-2 gap-4 md:flex">
+    <app-button
+      [disabled]="isValid"
+      (click)="continue()"
+      text="ACCEPT"
+    ></app-button>
+    <app-button (click)="reset()" text="RESET"></app-button>
+    <app-button (click)="load()" text="LOAD"></app-button>
+    <app-button (click)="export_pdf()" text="EXPORT_PDF"></app-button>
+  </div>
+</app-footer>
+<app-modal #modal>
+  <div class="bg-white">
+    <app-form [state]="templateModalPersonal"> </app-form>
+  </div>
+  <div class="bg-gray-50 px-4 pb-3 pt-1 sm:pt-3 sm:justify-end sm:flex gap-4">
+    <app-button [theme]="'warning'" text="ACCEPT"></app-button>
+    <app-button
+      [theme]="'warning'"
+      (click)="modal?.close()"
+      text="CANCEL"
+    ></app-button>
+  </div>
+</app-modal>

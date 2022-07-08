@@ -1,0 +1,34 @@
+{
+  "name": "modalData",
+  "theme": "modal",
+  "fields": [
+    {
+      "label": "name",
+      "control": "name2",
+      "class": "w-full",
+      "placeholder": "name",
+      "inline": true,
+      "type": "text"
+    },
+    {
+      "label": "age",
+      "control": "age2",
+      "type": "checkbox",
+      "inline": true,
+      "data": ["18-25"],
+      "class": "w-full",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "label": "surname",
+      "control": "surname2",
+      "class": "w-full",
+      "inline": true,
+      "type": "text"
+    }
+  ]
+}

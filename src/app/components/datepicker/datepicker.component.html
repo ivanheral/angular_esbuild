@@ -1,0 +1,51 @@
+<div [formGroup]="group" [ngClass]="theme?.control ? theme?.control + ' ' : ''">
+  <div [ngClass]="form?.inline ? 'md:flex md:items-center' : ''">
+    <div [ngClass]="form?.inline ? 'md:w-1/3 ' : ''">
+      <label
+        [ngClass]="theme?.label ? theme?.label + ' ' : ''"
+        for="{{ form.control }}"
+        >{{ (form.label ? "INPUT." + form.label : "") | uppercase | translate
+        }}<span *ngIf="c?.errors" style="color: red">*</span></label
+      >
+    </div>
+    <div [ngClass]="form?.inline ? 'md:w-2/3' : ''">
+      <div class="grid gap-4 md:grid-cols-3">
+        <input
+          [ngClass]="theme?.field ? theme?.field + ' ' : ''"
+          pattern="\d*"
+          maxlength="2"
+          [ngModel]="day"
+          [ngModelOptions]="{ standalone: true }"
+          (ngModelChange)="updateday($event)"
+          placeholder="{{ 'INPUT.DAY' | uppercase | translate }}"
+        />
+        <input
+          [ngClass]="theme?.field ? theme?.field + ' ' : ''"
+          pattern="\d*"
+          maxlength="2"
+          [ngModel]="month"
+          [ngModelOptions]="{ standalone: true }"
+          (ngModelChange)="updatemonth($event)"
+          placeholder="{{ 'INPUT.MONTH' | uppercase | translate }}"
+        />
+        <input
+          [ngClass]="theme?.field ? theme?.field + ' ' : ''"
+          pattern="\d*"
+          maxlength="4"
+          [ngModel]="year"
+          [ngModelOptions]="{ standalone: true }"
+          (ngModelChange)="updateyear($event)"
+          placeholder="{{ 'INPUT.YEAR' | uppercase | translate }}"
+        />
+      </div>
+    </div>
+    <div [ngClass]="form?.inline ? 'md:flex md:items-center' : ''">
+      <div [ngClass]="form?.inline ? 'md:w-1/3' : ''"></div>
+      <app-validator
+        [ngClass]="form?.inline ? 'md:w-2/3' : ''"
+        [control]="c"
+        [field]="form"
+      ></app-validator>
+    </div>
+  </div>
+</div>

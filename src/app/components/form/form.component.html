@@ -1,0 +1,64 @@
+<form
+  [formGroup]="formGroup"
+  [ngClass]="theme?.form ? theme?.form + ' ' : 'w-full'"
+>
+  <div [ngClass]="getClass(_f)" *ngFor="let _f of formTemplate.fields">
+    <div [ngSwitch]="_f.type">
+      <app-input
+        *ngSwitchCase="'text'"
+        [group]="formGroup"
+        [form]="_f"
+        [theme]="theme"
+      ></app-input>
+      <app-select
+        *ngSwitchCase="'select'"
+        [group]="formGroup"
+        [form]="_f"
+        [theme]="theme"
+      ></app-select>
+      <app-checkbox
+        *ngSwitchCase="'checkbox'"
+        [group]="formGroup"
+        [form]="_f"
+        [theme]="theme"
+      >
+      </app-checkbox>
+      <app-radiobutton
+        *ngSwitchCase="'radiobutton'"
+        [group]="formGroup"
+        [form]="_f"
+        [theme]="theme"
+      >
+      </app-radiobutton>
+      <app-textarea
+        *ngSwitchCase="'textarea'"
+        [group]="formGroup"
+        [form]="_f"
+        [theme]="theme"
+      >
+      </app-textarea>
+      <app-multiselect
+        *ngSwitchCase="'multiselect'"
+        [group]="formGroup"
+        [form]="_f"
+        [theme]="theme"
+      >
+      </app-multiselect>
+      <app-multicheckbox
+        *ngSwitchCase="'multicheckbox'"
+        [group]="formGroup"
+        [form]="_f"
+        [theme]="theme"
+      >
+      </app-multicheckbox>
+      <app-datepicker
+        *ngSwitchCase="'datepicker'"
+        [group]="formGroup"
+        [form]="_f"
+        [theme]="theme"
+      >
+      </app-datepicker>
+    </div>
+  </div>
+  <ng-content></ng-content>
+</form>

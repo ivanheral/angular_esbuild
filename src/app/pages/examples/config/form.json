@@ -1,0 +1,163 @@
+{
+  "name": "personalData",
+  "theme": "default",
+  "fields": [
+    {
+      "label": "name",
+      "control": "name",
+      "class": "w-full md:w-1/2",
+      "placeholder": "name",
+      "type": "text",
+      "validators": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "min",
+          "value": 5
+        },
+        {
+          "type": "max",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "label": "date",
+      "control": "date",
+      "class": "w-full md:w-1/2",
+      "placeholder": "date",
+      "type": "datepicker",
+      "validators": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "date"
+        }
+      ]
+    },
+    {
+      "label": "wine",
+      "control": "wine",
+      "type": "multiselect",
+      "class": "w-full",
+      "prop": "name"
+    },
+    {
+      "label": "car",
+      "control": "car",
+      "type": "select",
+      "class": "w-full",
+      "prop": "name"
+    },
+    {
+      "label": "surname",
+      "control": "surname",
+      "class": "w-full",
+      "type": "text",
+      "inline": true,
+      "validators": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "label": "comments",
+      "control": "comments",
+      "type": "textarea",
+      "class": "w-full",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "label": "phone",
+      "control": "phone",
+      "class": "w-full",
+      "type": "text",
+      "input_type": "number",
+      "validators": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "phone"
+        }
+      ]
+    },
+    {
+      "label": "gender",
+      "control": "gender",
+      "class": "w-full",
+      "type": "select",
+      "inline": true,
+      "prop": "name",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "label": "age",
+      "control": "age",
+      "type": "checkbox",
+      "data": ["18-25"],
+      "class": "w-full",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "label": "mail",
+      "control": "mail",
+      "type": "text",
+      "class": "w-full",
+      "validators": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "mail"
+        }
+      ]
+    },
+    {
+      "label": "marital_status",
+      "control": "marital_status",
+      "type": "radiobutton",
+      "data": ["Hombre", "Mujer"],
+      "class": "w-full",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "label": "password",
+      "control": "password",
+      "class": "w-full md:w-1/2",
+      "type": "text",
+      "input_type": "password"
+    },
+    {
+      "label": "postal",
+      "control": "postal",
+      "class": "w-full md:w-1/2",
+      "type": "text",
+      "input_type": "text",
+      "validators": [
+        {
+          "type": "postal"
+        }
+      ]
+    }
+  ]
+}
